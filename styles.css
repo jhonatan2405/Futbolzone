@@ -1,0 +1,835 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #0a5c36;
+    --color-secondary: #e63946;
+    --color-accent: #ffd166;
+    --color-dark: #1d3557;
+    --color-light: #f1faee;
+    --color-gray: #8d99ae;
+    --font-primary: 'Montserrat', sans-serif;
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-secondary);
+    border-radius: 2px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #074428;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: var(--transition);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.menu-items {
+    display: flex;
+}
+
+.menu-items li {
+    margin-left: 1.5rem;
+}
+
+.menu-items a {
+    color: var(--color-dark);
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+}
+
+.menu-items a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: var(--transition);
+}
+
+.menu-items a:hover {
+    color: var(--color-primary);
+}
+
+.menu-items a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-dark);
+    margin: 5px 0;
+    transition: var(--transition);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.animated-title {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards 0.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Noticias Section */
+.noticias {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 0;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    padding: 0 1rem;
+}
+
+.noticia-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.noticia-img {
+    height: 500px;
+}
+
+.noticia-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.noticia-content h3 {
+    margin-bottom: 1rem;
+    color: var(--color-dark);
+}
+
+.noticia-content p {
+    margin-bottom: 1.5rem;
+    color: var(--color-gray);
+    flex-grow: 1;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.carousel-control {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.2rem;
+}
+
+.carousel-control:hover {
+    background-color: var(--color-dark);
+}
+
+/* Ligas section*/
+.tablas {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+
+/* Equipos Section */
+.equipos {
+    padding: 5rem 0;
+    background-color: #ffffff;
+}
+
+.equipos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.equipo-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.equipo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.equipo-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    background-color: #f1f1f1;
+    position: relative;
+    overflow: hidden;
+}
+
+[data-equipo="real-madrid"] .equipo-logo {
+    background: url('img//logos/logorealmadrid.png') no-repeat center center/cover;
+}
+
+[data-equipo="barcelona"] .equipo-logo {
+    background: url('img/logos/logobarcelona.png') no-repeat center center/cover;
+}
+
+[data-equipo="liverpool"] .equipo-logo {
+    background: url('img/logos/logoliverpool.png') no-repeat center center/cover;
+}
+
+[data-equipo="inter"] .equipo-logo {
+    background: url('img/logos/logointer.png') no-repeat center center/cover;
+}
+
+.equipo-card h3 {
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.equipo-info {
+    color: var(--color-gray);
+    font-size: 0.9rem;
+}
+
+.equipo-info p {
+    margin-bottom: 0.5rem;
+}
+
+/* Partidos Section */
+.partidos {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+.partidos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.partido-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.partido-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.partido-header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.countdown {
+    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.partido-equipos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.equipo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.equipo-logo.small {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.5rem;
+}
+
+.vs {
+    font-weight: 700;
+    color: var(--color-secondary);
+    font-size: 1.2rem;
+}
+
+.partido-info {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    text-align: center;
+    color: var(--color-gray);
+    font-size: 0.9rem;
+}
+
+/* Estadísticas Section */
+.estadisticas {
+    padding: 5rem 0;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.estadisticas .section-title {
+    color: white;
+}
+
+.estadisticas .section-title::after {
+    background-color: var(--color-accent);
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+    align-items: stretch;
+}
+
+.stat-item {
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.stat-value {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-accent);
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-dark);
+    color: white;
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-logo h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-logo p {
+    color: var(--color-gray);
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-links h3::after,
+.footer-contact h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--color-secondary);
+}
+
+.footer-links ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links ul li a {
+    color: var(--color-gray);
+    transition: var(--transition);
+}
+
+.footer-links ul li a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.footer-contact p {
+    margin-bottom: 1rem;
+    color: var(--color-gray);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-gray);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero-content h2 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-items {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        transform: translateY(-150%);
+        transition: var(--transition);
+        z-index: 999;
+    }
+
+    .menu-items.active {
+        transform: translateY(0);
+    }
+
+    .menu-items li {
+        margin: 1rem 0;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .noticia-img {
+        height: 130px; /* Altura reducida para tablets */
+    }
+
+    .section-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .partido-equipos {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .equipo {
+        width: 100%;
+    }
+
+    .vs {
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .noticia-img {
+        height: 130px; /* Altura reducida para tablets */
+    }
+
+    .stat-value {
+        font-size: 2.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Estilo base de la tabla */
+#tabla-clasificacion {
+    text-align: center;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    padding: 0 10px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #0a5c36;
+}
+
+.navegacion {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.navegacion button {
+    background-color: #0a5c36;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navegacion button:hover {
+    background-color: #084b2d;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 0 auto;
+    table-layout: fixed; /* Importante para control de ancho de columnas */
+}
+
+table th, table td {
+    padding: 8px 4px;
+    text-align: center;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+table th {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Ajustes de ancho para columnas específicas */
+table .pos-col {
+    width: 8%;
+}
+
+table .team-col {
+    width: 28%;
+}
+
+table .num-col {
+    width: 8%;
+}
+
+/* Resaltar filas al pasar el cursor */
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 18px;
+    }
+  
+    .navegacion button {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+  
+    table {
+        font-size: 12px;
+    }
+    
+    table th, table td {
+        padding: 6px 2px;
+    }
+    
+    table .team-col {
+        width: 22%;
+    }
+    
+    /* Usar abreviaturas en pantallas medianas */
+    .header-full {
+        display: none;
+    }
+    
+    .header-short {
+        display: block;
+    }
+}
+  
+@media (max-width: 576px) {
+    h2 {
+        font-size: 16px;
+    }
+  
+    .navegacion button {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+  
+    table {
+        font-size: 10px;
+    }
+  
+    table th, table td {
+        padding: 4px 1px;
+    }
+    
+    table .pos-col {
+        width: 7%;
+    }
+    
+    table .team-col {
+        width: 20%;
+    }
+    
+    table .num-col {
+        width: 9%;
+    }
+
+    #tabla-clasificacion {
+        padding: 0 3px;
+    }
+}
+
+/* En pantallas muy pequeñas, ajustar aún más */
+@media (max-width: 400px) {
+    table {
+        font-size: 9px;
+    }
+    
+    table th, table td {
+        padding: 3px 1px;
+    }
+    
+    table .team-col {
+        width: 18%;
+    }
+}
+
+/* Por defecto, mostrar versión completa de encabezados */
+.header-short {
+    display: none;
+}
+
+.header-full {
+    display: block;
+}

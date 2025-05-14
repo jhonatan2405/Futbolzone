@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FútbolZone - Tu portal de fútbol</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>FútbolZone</h1>
+            </div>
+            <nav class="menu">
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="menu-items" id="menuItems">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#noticias">Noticias</a></li>
+                    <li><a href="#tablas">Clasificaciones</a></li>
+                    <li><a href="#equipos">Equipos</a></li>
+                    <li><a href="#partidos">Partidos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="animated-title">La Pasión del Fútbol</h2>
+                <p>Tu portal de noticias, resultados y toda la información sobre el deporte rey</p>
+                <a href="#noticias" class="btn btn-primary">Ver Noticias</a>
+            </div>
+        </div>
+    </section>
+
+<section class="noticias" id="noticias">
+    <div class="container">
+        <h2 class="section-title">Últimas Noticias</h2>
+        <div class="carousel-container">
+            <div class="carousel" id="noticiasCarousel">
+                <div class="carousel-item">
+                    <div class="noticia-card">
+                        <div class="noticia-img"><img src="img/RealMadridM.jpeg" alt="Mundial de Clubes"></div>
+                        <div class="noticia-content">
+                            <a href="noticias/noticia1.html"><h3>El Real Madrid se prepara para el Mundial de Clubes</h3></a>
+                            <p>El conjunto merengue intensifica sus entrenamientos para el próximo torneo internacional donde buscarán ampliar su palmarés de títulos.</p>
+                            <a href="noticias/noticia1.html" class="btn btn-small">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="noticia-card">
+                        <div class="noticia-img"><img src="img/barcelonasinchampions.jpg" alt="Barcelona Champions"></div>
+                        <div class="noticia-content">
+                           <a href="noticias/noticia2.html"><h3>El Barcelona más de 10 años sin ganar la Champions</h3></a>
+                            <p>El club azulgrana cumple una década sin levantar la orejona, generando preocupación entre sus aficionados y directivos.</p>
+                            <a href="noticias/noticia2.html" class="btn btn-small">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="noticia-card">
+                        <div class="noticia-img"><img src="img/xavi alonsoR.png" alt="Xabi Alonso"></div>
+                        <div class="noticia-content">
+                            <a href="noticias/noticia3.html"><h3>Xabi Alonso nuevo técnico del Real Madrid</h3></a>
+                            <p>El ex jugador español regresa al Santiago Bernabéu para asumir el banquillo tras su exitoso paso por el Bayer Leverkusen.</p>
+                            <a href="noticias/noticia3.html" class="btn btn-small">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="noticia-card">
+                        <div class="noticia-img"><img src="img/ancelottibr.jpg" alt="Ancelotti Brasil"></div>
+                        <div class="noticia-content">
+                            <a href="noticias/noticia4.html"><h3>Ancelotti firma con Brasil</h3></a>
+                            <p>El experimentado técnico italiano dirigirá a la selección brasileña tras finalizar su contrato con el Real Madrid.</p>
+                            <a href="noticias/noticia4.html" class="btn btn-small">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="noticia-card">
+                        <div class="noticia-img"><img src="img/mundial2030.jpeg" alt="Mundial 2030"></div>
+                        <div class="noticia-content">
+                            <a href="noticias/noticia5.html"><h3>España, Portugal y Marruecos presentan candidatura para el Mundial 2030</h3></a>
+                            <p>Los tres países unen fuerzas para albergar la Copa del Mundo del centenario con un proyecto innovador y sostenible.</p>
+                            <a href="noticias/noticia5.html" class="btn btn-small">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button id="prevBtn" class="carousel-control">&#10094;</button>
+                <button id="nextBtn" class="carousel-control">&#10095;</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="tablas" id="tablas">
+        <div class="container">
+            <h2 class="section-title">Clasificación de Ligas - Temporada 2024/2025</h2>
+            <div id="tabla-clasificacion"></div>
+        </div>
+    </section>
+
+    <section class="equipos" id="equipos">
+        <div class="container">
+            <h2 class="section-title">Equipos Destacados</h2>
+            <div class="equipos-grid">
+                <div class="equipo-card" data-equipo="real-madrid">
+                    <div class="equipo-logo"></div>
+                    <h3>Real Madrid</h3>
+                    <div class="equipo-info">
+                        <p>Fundado: 1902</p>
+                        <p>Estadio: Santiago Bernabéu</p>
+                        <p>Títulos de Liga: 35</p>
+                    </div>
+                </div>
+                <div class="equipo-card" data-equipo="barcelona">
+                    <div class="equipo-logo"></div>
+                    <h3>FC Barcelona</h3>
+                    <div class="equipo-info">
+                        <p>Fundado: 1899</p>
+                        <p>Estadio: Camp Nou</p>
+                        <p>Títulos de Liga: 26</p>
+                    </div>
+                </div>
+                <div class="equipo-card" data-equipo="liverpool">
+                    <div class="equipo-logo"></div>
+                    <h3>Liverpool FC</h3>
+                    <div class="equipo-info">
+                        <p>Fundado: 1892</p>
+                        <p>Estadio: Anfield</p>
+                        <p>Títulos de Liga: 19</p>
+                    </div>
+                </div>
+                <div class="equipo-card" data-equipo="inter">
+                    <div class="equipo-logo"></div>
+                    <h3>Inter de Milán</h3>
+                    <div class="equipo-info">
+                        <p>Fundado: 1908</p>
+                        <p>Estadio: San Siro</p>
+                        <p>Títulos de Liga: 19</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partidos" id="partidos">
+        <div class="container">
+          <h2 class="section-title">Próximos Partidos</h2>
+          <div class="partidos-container">
+      
+            <!-- Real Madrid vs Al Hilal -->
+            <div class="partido-card">
+              <div class="partido-header">
+                <span>FIFA Club World Cup - Grupo H</span>
+              </div>
+              <div class="partido-equipos">
+                <div class="equipo local">
+                  <div class="equipo-logo small"><img src="img/logos/logorealmadrid.png" alt=""></div>
+                  <span>Real Madrid</span>
+                </div>
+                <div class="vs">VS</div>
+                <div class="equipo visitante">
+                  <div class="equipo-logo small"><img src="img/logos/logoalhial.png" alt=""></div>
+                  <span>Al Hilal</span>
+                </div>
+              </div>
+              <div class="partido-info">
+                <p>18 de junio, 15:00</p>
+                <p>Hard Rock Stadium, Miami</p>
+              </div>
+            </div>
+      
+            <!-- Manchester City vs Juventus -->
+            <div class="partido-card">
+              <div class="partido-header">
+                <span>FIFA Club World Cup - Grupo G</span>
+              </div>
+              <div class="partido-equipos">
+                <div class="equipo local">
+                  <div class="equipo-logo small"><img src="img/logos/logoManchertercity.png" alt=""></div>
+                  <span>Manchester City</span>
+                </div>
+                <div class="vs">VS</div>
+                <div class="equipo visitante">
+                  <div class="equipo-logo small"><img src="img/logos/logojuventus.png" alt=""></div>
+                  <span>Juventus</span>
+                </div>
+              </div>
+              <div class="partido-info">
+                <p>26 de junio, 15:00</p>
+                <p>Camping World Stadium, Orlando</p>
+              </div>
+            </div>
+      
+            <!-- Inter de Milán vs River Plate -->
+            <div class="partido-card">
+              <div class="partido-header">
+                <span>FIFA Club World Cup - Grupo E</span>
+              </div>
+              <div class="partido-equipos">
+                <div class="equipo local">
+                  <div class="equipo-logo small"><img src="img/logos/logointer2.png" alt=""></div>
+                  <span>Inter de Milán</span>
+                </div>
+                <div class="vs">VS</div>
+                <div class="equipo visitante">
+                  <div class="equipo-logo small"><img src="img/logos/logoriverplate.png" alt=""></div>
+                  <span>River Plate</span>
+                </div>
+              </div>
+              <div class="partido-info">
+                <p>25 de junio, 21:00</p>
+                <p>Lumen Field, Seattle</p>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+
+    <section class="estadisticas">
+        <div class="container">
+            <h2 class="section-title">Estadísticas de la Temporada</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-value" id="golesTotales">0</div>
+                    <div class="stat-label">Goles Totales</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="partidosJugados">0</div>
+                    <div class="stat-label">Partidos Jugados</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="tarjetasRojas">0</div>
+                    <div class="stat-label">Tarjetas Rojas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="asistencias">0</div>
+                    <div class="stat-label">Asistencias</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>FútbolZone</h2>
+                    <p>Tu portal de fútbol favorito</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#noticias">Noticias</a></li>
+                        <li><a href="#equipos">Equipos</a></li>
+                        <li><a href="#partidos">Partidos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <p>Email: info@futbolzone.com</p>
+                    <p>Teléfono: +34 123 456 789</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">TW</a>
+                        <a href="#" class="social-icon">IG</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FútbolZone. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
