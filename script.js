@@ -186,12 +186,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function animateStats() {
-        const stats = [
-            { id: 'golesTotales', target: 1247 },
-            { id: 'partidosJugados', target: 380 },
-            { id: 'tarjetasRojas', target: 89 },
-            { id: 'asistencias', target: 876 }
-        ];
+    const stats = [
+        { id: 'golesTotales', target: 1342 },        // Goles marcados en la temporada 2024-25
+        { id: 'partidosJugados', target: 410 },       // Partidos jugados hasta la fecha
+        { id: 'tarjetasRojas', target: 93 },          // Rojas acumuladas
+        { id: 'asistencias', target: 902 }            // Asistencias registradas
+    ];
     
         stats.forEach(stat => {
             const element = document.getElementById(stat.id);
